@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react'
-import { RouteObject, createBrowserRouter } from 'react-router-dom'
+import { RouteObject, createHashRouter } from 'react-router-dom'
 import { Root } from './root'
 
 const BaseLayout = lazy(() => import('@/layout/baseLayout'))
@@ -31,6 +31,6 @@ const appRoutes: RouteObject[] = [
 	}
 ]
 
-const appRouter = createBrowserRouter(appRoutes)
+const appRouter = createHashRouter(appRoutes)
 
 export default appRouter
