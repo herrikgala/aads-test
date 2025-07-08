@@ -4,7 +4,6 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/aads-test', // Updated to match the repository name
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
