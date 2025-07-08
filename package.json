@@ -8,7 +8,8 @@
 		"build": "vite build",
 		"lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
 		"lint:fix": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"deploy": "gh-pages -d dist"
 	},
 	"dependencies": {
 		"@reduxjs/toolkit": "^2.8.2",
@@ -35,6 +36,7 @@
 		"globals": "^16.2.0",
 		"jiti": "^2.4.2",
 		"parcel": "^2.15.4",
+		"gh-pages": "^6.3.0",
 		"sass-embedded": "^1.89.2",
 		"vite": "^7.0.0"
 	}
