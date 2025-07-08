@@ -17,7 +17,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'dist',
+    outDir: 'docs',
   },
   server: {
     port: 3001,
