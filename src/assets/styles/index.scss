@@ -1,0 +1,71 @@
+@use 'sass:math';
+@use './abstracts/mixins' as *;
+@use './abstracts/global' as *;
+
+// Обнуление и обшие параметры =======================================================================================================
+@use './base/fonts';
+@use './base/null';
+@use './base/variables';
+@use './base/common';
+
+body {
+	line-height: 1;
+	font-size: $fontSize;
+	font-family: $fontFamily;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	background: var(--colors-fill-secondary);
+	overflow-y: auto;
+	overflow-x: hidden;
+	scroll-snap-type: y mandatory;
+	color: $mainColor;
+
+	&._lock {
+		-ms-touch-action: none;
+		touch-action: none;
+		overflow: hidden;
+		overscroll-behavior: none;
+	}
+
+	&::selection {
+		color: var(--base-neutral-white);
+		background-color: var(--base-accent-primary-500);
+	}
+
+	main {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 0%;
+	}
+}
+
+input,
+button,
+textarea {
+	font-family: $fontFamily;
+}
+
+button {
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+	outline: 0;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+[class*='__container'] {
+	@if ($maxWidthContainer > 0) {
+		max-width: rem($maxWidthContainer);
+		box-sizing: content-box;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@if ($containerPadding > 0) {
+		padding-left: rem(math.div($containerPadding, 2));
+		padding-right: rem(math.div($containerPadding, 2));
+	}
+}
